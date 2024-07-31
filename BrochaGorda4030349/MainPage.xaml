@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:BrochaGorda4030349"
+             x:Class="BrochaGorda4030349.MainPage">
+
+
+    <ContentPage.BindingContext>
+        <local:BrochaViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Image
+                Source="brocha.jpg"
+                HeightRequest="185"
+                Aspect="AspectFit"/>
+
+
+            <Label Text="Área (m²):" />
+            <Entry Text="{Binding Area, Mode=TwoWay}" Keyboard="Numeric" />
+
+            <Label Text="Tarifa por m²:" />
+            <Entry Text="{Binding TasaPorCuadrado, Mode=TwoWay}" Keyboard="Numeric" />
+
+            <Label Text="Costo Total:" />
+            <Label Text="{Binding TotalCost, StringFormat='${0:F2}'}" />
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
